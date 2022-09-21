@@ -24,19 +24,29 @@ console.log(list);
 
 //Step 1: Start with comparing each element (i) 
 //to its adjacent element (i+1)
-//swap the smaller value to the left
-//check if it's in order?
+//swap the larger value to the right
+//with each iteration the last value is always the largest
+//therefore you only need to iterate 1 less each time
 
 const bubbleSort = (list) => {
-    for(let i = 0; i < list.length;i++) {
-        if (list[i]>list[i+1]) {
-            let largerValue=list[i];
-            let smallerValue=list[i+1];
-            list[i+1]=largerValue;
-            list[i]=smallerValue;
+
+    //
+    for (let j = 0; j < list.length; j++){
+
+        for (let i = 0; i < list.length; i++) {
+            
+            if (list[i]>list[i+1]) {
+                let largerValue=list[i];
+                let smallerValue=list[i+1];
+                list[i+1]=largerValue;
+                list[i]=smallerValue;
+            }
         }
+    console.log(list)
     }
 }
+
+
 
 bubbleSort(list);
 console.log(list);
