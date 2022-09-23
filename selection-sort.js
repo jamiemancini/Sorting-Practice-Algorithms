@@ -14,7 +14,7 @@ function createRandomList(size,range) {
     return randomList
 }
 
-let list = createRandomList(5,50);
+let list = createRandomList(10,50);
 console.log(list);
 
 
@@ -22,6 +22,7 @@ console.log(list);
 //selection sort repeatedly finds the smallest element
 //moves it to the front of the list
 //you must store the smallest element in a variable
+//also you must store the index
 //until you finish iterating through the list
 
 function selectionSort(list) {
@@ -32,11 +33,11 @@ function selectionSort(list) {
 
         //start with the value at the head of the list as the smallest value
         smallest_value = list[i];
-        console.log("loop 1: the smallest value is " + smallest_value);
+        console.log("loop 1: the smallest value is " + smallest_value + " i is " + i);
         
         //loops through the entire array from index i=1 to index i=(length-1)
         //because index i=1 is the second element in the list
-        for (j=1; j < list.length; j++){
+        for (j=i+1; j < list.length; j++){
             
             //if the element at index j is less than the smallest value
             //then it becomes the variable 'smallest_value' 
